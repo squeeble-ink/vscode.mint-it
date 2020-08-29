@@ -5,6 +5,7 @@ class TestJS {
    */
   constructor() {
     // NOTE: this is a constructor
+    // FixMe: some comments
   }
 
   /* FixMe a nice cold beer please */
