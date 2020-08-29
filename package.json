@@ -3,6 +3,7 @@
   "displayName": "mint-it",
   "description": "vscode comment highlighter : just comment it",
   "version": "0.0.1",
+  "license": "GPL-3.0",
   "engines": {
     "vscode": "^1.42.0"
   },
@@ -19,6 +20,13 @@
     "onLanguage:cpp",
     "onLanguage:ino"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squeeble-ink/vscode.mint-it.git"
+  },
+  "bugs": {
+    "url": "https://github.com/squeeble-ink/vscode.mint-it/issues"
+  },
   "main": "./out/extension.js",
   "icon": "assets/logo.png",
   "contributes": {

@@ -1,9 +1,7 @@
 # Change Log
 
-All notable changes to the "mint-it" extension will be documented in this file.
+## [v0.0.1] - 29/08/2020 - Initial release
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+![mint-it-ts](./assets/mint-it-ts-100.png)  
+![mint-it-js](./assets/mint-it-js-100.png)  
+![mint-it-json](./assets/mint-it-json-100.png)
