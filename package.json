@@ -4,22 +4,63 @@
   "description": "vscode comment highlighter : just comment it",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.48.0"
+    "vscode": "^1.42.0"
   },
   "categories": [
+    "Formatters",
     "Other"
   ],
   "activationEvents": [
-    "onCommand:mint-it.helloWorld"
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:css",
+    "onLanguage:cpp",
+    "onLanguage:ino"
   ],
   "main": "./out/extension.js",
+  "icon": "assets/logo.png",
   "contributes": {
-    "commands": [
-      {
-        "command": "mint-it.helloWorld",
-        "title": "Hello World"
+    "configuration": {
+      "title": "Trepid Ink",
+      "properties": {
+        "trepid-ink.comments": {
+          "description": "All / Block / Single / No comment highlights",
+          "default": "All",
+          "type": "string"
+        },
+        "trepid-ink.tags": {
+          "description": "Create extra tags to hilight other information or in an other color",
+          "default": [
+            {
+              "style": {
+                "color": "#6bf7f7"
+              },
+              "tag": "NOTE"
+            },
+            {
+              "style": {
+                "color": "#ff893a"
+              },
+              "tag": "TODO"
+            },
+            {
+              "style": {
+                "color": "#ff3333"
+              },
+              "tag": "FixMe"
+            }
+          ],
+          "type": "array"
+        },
+        "trepid-ink.delay": {
+          "description": "Delay it takes to style the comments",
+          "default": 100,
+          "type": "number"
+        }
       }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
