@@ -31,14 +31,14 @@
   "icon": "assets/logo.png",
   "contributes": {
     "configuration": {
-      "title": "Trepid Ink",
+      "title": "mint-it",
       "properties": {
-        "trepid-ink.comments": {
+        "mint-it.comments": {
           "description": "All / Block / Single / No comment highlights",
           "default": "All",
           "type": "string"
         },
-        "trepid-ink.tags": {
+        "mint-it.tags": {
           "description": "Create extra tags to hilight other information or in an other color",
           "default": [
             {
@@ -62,7 +62,7 @@
           ],
           "type": "array"
         },
-        "trepid-ink.delay": {
+        "mint-it.delay": {
           "description": "Delay it takes to style the comments",
           "default": 100,
           "type": "number"
