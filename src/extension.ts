@@ -84,7 +84,7 @@ const activate = (context: vscode.ExtensionContext) => {
     commentSettings === CommentType.SingleLine ||
     commentSettings === CommentType.MultiLines
   ) {
-    const message = 'Trepid Ink Comment Higligher Enabled'
+    const message = 'mint-it comment higlighter enabled'
     vscode.window.showInformationMessage(message)
     InitEventListeners(context)
   }
