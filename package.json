@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "license": "GPL-3.0",
   "engines": {
-    "vscode": "^1.42.0"
+    "vscode": "^1.47.0"
   },
   "categories": [
     "Formatters",
@@ -64,7 +64,7 @@
         },
         "mint-it.delay": {
           "description": "Delay it takes to style the comments",
-          "default": 100,
+          "default": 400,
           "type": "number"
         }
       }

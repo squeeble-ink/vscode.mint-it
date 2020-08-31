@@ -35,7 +35,7 @@ export enum CommentType {
 
 export const GetConfig = (): TrepidInkConfig => {
   const config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration(
-    'trepid-ink',
+    'mint-it',
   )
 
   return {

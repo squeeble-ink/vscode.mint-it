@@ -39,8 +39,6 @@ export class Parser {
   }
 
   private _SetBreaks(languageId: string) {
-    console.log(languageId)
-
     this._supportedLanguage = false
 
     languages.forEach((comment) => {
