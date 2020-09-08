@@ -6,7 +6,7 @@
   "license": "GPL-3.0",
   "publisher": "Squeeble",
   "engines": {
-    "vscode": "^1.47.0"
+    "vscode": "^1.48.0"
   },
   "categories": [
     "Formatters",
