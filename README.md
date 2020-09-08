@@ -1,4 +1,22 @@
-# mint-it
+<p>
+  <h1 align="center">mint-it</h1>
+</p>
+
+<p align="center">
+  <a href="https://github.com/squeeble-ink/vscode.deco-it/issues">
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues/squeeble-ink/vscode.mint-it?color=253550&logo=github&style=flat-square">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=squeeble.deco-it">
+    <img src="https://vsmarketplacebadge.apphb.com/version-short/squeeble.mint-it.svg?label=%20&style=flat-square&color=253550">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=squeeble.deco-it">
+    <img src="https://vsmarketplacebadge.apphb.com/installs-short/squeeble.mint-it.svg?label=%20&style=flat-square&color=253550">
+  </a>
+  <br>
+  <a href="https://code.visualstudio.com/" >vscode</a> comment highlighter : just comment it 
+</p>
+
+<h1></h1>
 
 The comment higlighter `mint-it` came from our [`trepid-ink`](https://github.com/squeeble-ink/vscode.trepid-ink/edit/master/README.md)
 

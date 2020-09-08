@@ -64,7 +64,7 @@
         },
         "mint-it.delay": {
           "description": "Delay it takes to style the comments",
-          "default": 400,
+          "default": 100,
           "type": "number"
         }
       }
