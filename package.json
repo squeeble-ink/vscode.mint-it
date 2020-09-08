@@ -4,6 +4,7 @@
   "description": "vscode comment highlighter : just comment it",
   "version": "0.0.1",
   "license": "GPL-3.0",
+  "publisher": "Squeeble",
   "engines": {
     "vscode": "^1.47.0"
   },
