@@ -69,7 +69,7 @@ This extension contributes the following settings:
 
 ### Examples
 
-![mint-it-ts](./assets/deco-it-ts-100.png)  
-![mint-it-js](./assets/deco-it-js-100.png)  
-![mint-it-json](./assets/deco-it-css-100.png)  
-![mint-it-json](./assets/deco-it-cpp-100.png)
+![mint-it-ts](./assets/mint-it-ts-001.png)  
+![mint-it-js](./assets/mint-it-js-001.png)  
+![mint-it-css](./assets/mint-it-css-001.png)  
+![mint-it-cpp](./assets/mint-it-cpp-001.png)
