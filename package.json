@@ -2,7 +2,7 @@
   "name": "mint-it",
   "displayName": "mint-it",
   "description": "vscode comment highlighter : just comment it",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "GPL-3.0",
   "publisher": "Squeeble",
   "engines": {
