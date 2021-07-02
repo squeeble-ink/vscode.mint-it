@@ -11,7 +11,7 @@ class TestTS {
   /* FixMe a nice cold beer please */
 
   /*
-    NOTE that it not always works as we like...
-    FixMe I mean look at this...
+    NOTE: Comments like this can be used as well
+    TODO: Some awesome commenting <3
   */
 }

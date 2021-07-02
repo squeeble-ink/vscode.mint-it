@@ -5,7 +5,7 @@ export type TagConfig = {
   tag: string
 }
 
-export type TrepidInkConfig = {
+export type MintItConfig = {
   delay: number
   enabled: string
   tags: TagConfig[]
@@ -33,7 +33,7 @@ export enum CommentType {
   NoLines = 'No',
 }
 
-export const GetConfig = (): TrepidInkConfig => {
+export const GetConfig = (): MintItConfig => {
   const config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration(
     'mint-it',
   )

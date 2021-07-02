@@ -40,21 +40,25 @@ export class Parser {
 
   private _SetBreaks(languageId: string) {
     this._supportedLanguage = false
+    let isSet = false
 
     languages.forEach((comment) => {
       if (typeof comment.languageId === 'string') {
         if (comment.languageId === languageId) {
           this._supportedLanguage = true
+          isSet = true
         }
       } else {
         comment.languageId.forEach((language) => {
           if (language === languageId) {
             this._supportedLanguage = true
+            isSet = true
           }
         })
       }
 
-      if (this._supportedLanguage) {
+      if (this._supportedLanguage && isSet) {
+        isSet = false
         this._SetCommentBreaks(comment)
         return
       }
@@ -72,7 +76,7 @@ export class Parser {
       (this._commentType === CommentType.AllLines ||
         this._commentType === CommentType.SingleLine)
     ) {
-      this._singleLineComment = single
+      this._singleLineComment = this._EndRegEx(single)
     }
 
     if (
@@ -87,7 +91,7 @@ export class Parser {
   }
 
   private _EndRegEx(text: string): string {
-    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    return text.replace(/[\.\*\+\?\^\$\{\}\(\)\|\[\]\\\/]/gim, '\\$&')
   }
 
   private _GetCharacters(): string[] {
@@ -100,21 +104,17 @@ export class Parser {
   }
 
   private _Check(
-    match: RegExpExecArray | null,
+    match: string,
     startPos: vscode.Position,
     endPos: vscode.Position,
   ) {
     const range = { range: new vscode.Range(startPos, endPos) }
 
-    if (match !== null) {
-      // @ts-ginore
-      const matchTag = this._tags.find((item) => {
-        return item.tag.toLowerCase() === match[3].toLowerCase()
-      })
-      if (matchTag) {
-        matchTag.ranges.push(range)
+    this._tags.forEach((item) => {
+      if (item.tag.toLowerCase() === match.toLowerCase()) {
+        item.ranges.push(range)
       }
-    }
+    })
   }
 
   public SetRegex(languageId: string) {
@@ -124,25 +124,26 @@ export class Parser {
       return
     }
 
-    const comment = this._singleLineComment.replace(/\//gi, '\\/')
+    const comment = this._singleLineComment
     const matches = this._GetCharacters().join('|')
 
     this._regEx = `(${comment})+( |\t)*(${matches})+(.*)`
   }
 
   public FindSingleLineComments(activeEditor: vscode.TextEditor) {
+    if (this._singleLineComment === '') return
+
     const text = activeEditor.document.getText()
     const regEx = new RegExp(this._regEx, 'gi')
 
     let match: RegExpExecArray | null
     while ((match = regEx.exec(text))) {
-      const startPosNr =
-        match.index + match[2].length + this._singleLineComment.length
+      const startPosNr = match.index + match[1].length
       const endPosNr = match.index + match[0].length
 
       const startPos = activeEditor.document.positionAt(startPosNr)
       const endPos = activeEditor.document.positionAt(endPosNr)
-      this._Check(match, startPos, endPos)
+      this._Check(match[3], startPos, endPos)
     }
   }
 
@@ -152,47 +153,30 @@ export class Parser {
     const start = this._blockCommentStart
     const end = this._blockCommentEnd
 
-    const regExString = `(^|[ \t])(${start}[\\s])+([\\s\\S]*?)(${end}|\n)`
-    const regExSingle = `(${start})+([ \t]* \t*)(${matches})([ ]*|[:])+(${end}|[^\r\n]*)`
+    const regExSingle = `(${matches})(([^\n\r]*)|(${end}))`
     const regExComment = `(^|)+(${start})+([\\s\\S]*?)(${end})`
-    const RegExMulti = `(^)+([ \t]*| \t*|)(${matches})([ ]*|[:])+([^\r\n]*)`
+    const regExEndTest = `(${end}$)`
 
-    const stringRegEx = new RegExp(regExString, 'gm')
-    const singleRegEx = new RegExp(regExSingle, 'gi')
-    const commentRegEx = new RegExp(regExComment, 'gm')
-    const multiRegEx = new RegExp(RegExMulti, 'gim')
+    const singleRegEx = new RegExp(regExSingle, 'gim')
+    const commentRegEx = new RegExp(regExComment, 'gim')
+    const endlineRegEx = new RegExp(regExEndTest, 'gim')
 
     let multi: RegExpExecArray | null
     while ((multi = commentRegEx.exec(text))) {
-      let commentBlock = multi[0]
-
-      let line: RegExpExecArray | null
-      while ((line = multiRegEx.exec(commentBlock))) {
-        const startPosNr = multi.index + line.index + line[2].length
-        const endPosNr = multi.index + line.index + line[0].length
-
-        const startPos = activeEditor.document.positionAt(startPosNr)
-        const endPos = activeEditor.document.positionAt(endPosNr)
-        this._Check(line, startPos, endPos)
-      }
-    }
-
-    let single: RegExpExecArray | null
-    while ((single = stringRegEx.exec(text))) {
-      const commentBlock = single[0]
+      const commentBlock = multi[0]
 
       let line: RegExpExecArray | null
       while ((line = singleRegEx.exec(commentBlock))) {
-        const startPosNr =
-          single.index + this._blockCommentStart.length
+        const startPosNr = multi.index + line.index
         const endPosNr =
-          single.index +
-          single[0].length -
-          this._blockCommentEnd.length
+          multi.index +
+          line.index +
+          line[0].replace(endlineRegEx, '').length
 
         const startPos = activeEditor.document.positionAt(startPosNr)
         const endPos = activeEditor.document.positionAt(endPosNr)
-        this._Check(line, startPos, endPos)
+
+        this._Check(line[1], startPos, endPos)
       }
     }
   }
@@ -201,7 +185,7 @@ export class Parser {
     const text = activeEditor.document.getText()
     const matches = this._GetCharacters().join('|')
 
-    const regExComment = `(^)+([ \t]*\\* \t*)(${matches})([ ]*|[:])+([^\r\n]*)`
+    const regExComment = `(^)+([ \t]*\\*[ \t]*)(${matches})([ ]*|[:])+([^\r\n]*)`
 
     const stringRegEx = /(^|)+(\/\*\*)+([\s\S]*?)(\*\/)/gm
     const commentRegEx = new RegExp(regExComment, 'gim')
@@ -217,7 +201,7 @@ export class Parser {
 
         const startPos = activeEditor.document.positionAt(startPosNr)
         const endPos = activeEditor.document.positionAt(endPosNr)
-        this._Check(line, startPos, endPos)
+        this._Check(line[3], startPos, endPos)
       }
     }
   }

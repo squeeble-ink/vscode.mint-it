@@ -17,7 +17,7 @@ export const languages: CommentDefinition[] = [
     commentType: CommentType.AllLines,
   },
   {
-    languageId: ['css'],
+    languageId: ['css', 'scss'],
     singleLineComment: '',
     blockCommentStart: '/*',
     blockCommentEnd: '*/',
@@ -28,6 +28,13 @@ export const languages: CommentDefinition[] = [
     singleLineComment: '',
     blockCommentStart: '<!--',
     blockCommentEnd: '-->',
+    commentType: CommentType.MultiLines,
+  },
+  {
+    languageId: 'aspnetcorerazor',
+    singleLineComment: '',
+    blockCommentStart: '\@*',
+    blockCommentEnd: '*\@',
     commentType: CommentType.MultiLines,
   },
 ]
