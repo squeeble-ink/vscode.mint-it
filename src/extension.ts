@@ -33,6 +33,7 @@ const InitEventListeners = (context: vscode.ExtensionContext) => {
   vscode.workspace.onDidChangeTextDocument(
     (event) => {
       if (activeEditor && event.document === activeEditor.document) {
+        parser.SetRegex(activeEditor.document.languageId)
         TriggerUpdateDecorations()
       }
     },
@@ -70,8 +71,9 @@ const UpdateDecorations = () => {
     commentSettings === CommentType.MultiLines
   ) {
     parser.FindBlockComments(activeEditor)
-    parser.FindJSDocComments(activeEditor)
   }
+
+  parser.FindJSDocComments(activeEditor)
 
   parser.ApplyStyle(activeEditor)
 }

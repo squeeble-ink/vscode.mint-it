@@ -11,8 +11,8 @@ int main()
   std::cout << "Hello, world!\n";
 
   /*
-    NOTE that it not always works as we like...
-    FixMe I mean look at this...
+    NOTE: Comments like this can be used as well
+    TODO: Some awesome commenting <3
   */
 
   /* FixMe a nice cold beer please */
