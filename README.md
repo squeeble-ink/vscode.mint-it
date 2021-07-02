@@ -1,6 +1,8 @@
-<p>
-  <h1 align="center">mint-it</h1>
+<p align="center">
+  <img src="./assets/logo.png" width="100px"><br>
 </p>
+
+<h1 align="center">Mint it</h1>
 
 <p align="center">
   <a href="https://github.com/squeeble-ink/vscode.deco-it/issues">
@@ -17,8 +19,20 @@
 </p>
 
 <h1></h1>
+<h1></h1>
 
-The comment higlighter `mint-it` came from our [`trepid-ink`](https://github.com/squeeble-ink/vscode.trepid-ink/edit/master/README.md)
+<p align="center">
+  previous known as
+</p>
+
+<h1 align="center">Trepid ink</h1>
+
+<p align="center">
+    <img src="https://vsmarketplacebadge.apphb.com/version-short/squeeble.trepid-ink.svg?label=%20&style=flat-square&color=253550">
+    <img src="https://vsmarketplacebadge.apphb.com/installs-short/squeeble.trepid-ink.svg?style=flat-square&color=253550"><br>
+    <a href="https://github.com/squeeble-ink/vscode.trepid-ink/edit/master/README.md"><code>trepid-ink</code></a> is the predecessor of this comment highlighter <code>mint-it</code><br>
+    <code>trepid-ink</code> is <b>deprecated</b>
+</p>
 
 ## Features
 
@@ -30,7 +44,7 @@ This extension contributes the following settings:
   Delay it takes to style the comments  
   **NOTE:** Do not set it on 0!
 - `mint-it.comments`:  
-  `All` / `Block` / `Single` / `No`  
+  `All` / `Block` / `Single` / `JSDocs` / `None`  
   Sets which comments you want to highlight
 - `mint-it.tags`:  
   The ["style" can have all vscode theming](https://code.visualstudio.com/api/references/vscode-api#ThemableDecorationRenderOptions)  
@@ -65,11 +79,15 @@ This extension contributes the following settings:
 - TypeScript
 - TypeScriptReact
 - CSS
+- SCSS
 - CPP
+- HTML
+- CSHTML
 
 ### Examples
 
-![mint-it-ts](./assets/mint-it-ts-001.png)  
-![mint-it-js](./assets/mint-it-js-001.png)  
-![mint-it-css](./assets/mint-it-css-001.png)  
-![mint-it-cpp](./assets/mint-it-cpp-001.png)
+![mint-it-ts](./assets/mint-it-ts-100.png)  
+![mint-it-js](./assets/mint-it-js-100.png)  
+![mint-it-css](./assets/mint-it-css-100.png)  
+![mint-it-cpp](./assets/mint-it-cpp-100.png)  
+![mint-it-css](./assets/mint-it-html-100.png)  

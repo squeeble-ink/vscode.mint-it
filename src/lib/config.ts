@@ -30,7 +30,8 @@ export enum CommentType {
   AllLines = 'All',
   MultiLines = 'Block',
   SingleLine = 'Single',
-  NoLines = 'No',
+  JSDocs = 'JSDocs',
+  NoLines = 'None',
 }
 
 export const GetConfig = (): MintItConfig => {

@@ -73,9 +73,16 @@ const UpdateDecorations = () => {
     parser.FindBlockComments(activeEditor)
   }
 
-  parser.FindJSDocComments(activeEditor)
-
-  parser.ApplyStyle(activeEditor)
+  if (
+    commentSettings === CommentType.AllLines ||
+    commentSettings === CommentType.JSDocs
+  ) {
+    parser.FindJSDocComments(activeEditor)
+  }
+  
+  if (commentSettings !== CommentType.NoLines) {
+    parser.ApplyStyle(activeEditor)
+  }
 }
 
 // This method is called when vs code is activated

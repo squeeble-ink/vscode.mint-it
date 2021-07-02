@@ -1,8 +1,8 @@
 {
   "name": "mint-it",
-  "displayName": "mint-it",
+  "displayName": "Mint it",
   "description": "vscode comment highlighter : just comment it",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "license": "GPL-3.0",
   "publisher": "Squeeble",
   "engines": {
@@ -20,7 +20,7 @@
     "onLanguage:css",
     "onLanguage:scss",
     "onLanguage:cpp",
-    "onLanguage:ino"
+    "onLanguage:aspnetcorerazor"
   ],
   "repository": {
     "type": "git",
@@ -36,7 +36,7 @@
       "title": "mint-it",
       "properties": {
         "mint-it.comments": {
-          "description": "All / Block / Single / No comment highlights",
+          "description": "All / Block / Single / None comment highlights",
           "default": "All",
           "type": "string"
         },
