@@ -1,5 +1,12 @@
 # Change Log
 
+## [[v1.0.1] - 03/07/2021](https://github.com/squeeble-ink/vscode.mint-it/releases/tag/v1.0.1)
+
+### Fixed
+
+- README
+  - badge links
+
 ## [[v1.0.0] - 02/07/2021](https://github.com/squeeble-ink/vscode.mint-it/releases/tag/v1.0.0)
 
 ### Updated
@@ -11,21 +18,21 @@
 - logo  
   old: <img alt="logo-v0.0.2" src="./assets/logo-002.png" width="200"> new: <img alt="logo-v1.0.0" src="./assets/logo.png" width="200">
 
-
 ### Added
 
 - CHANGELOG
   - Changes for release v1.0.0
-- Languages 
+- Languages
   - SCSS
   - CSHTML
 - Test sample
   - HTML
 - Settings
   - Option to render only JSDocs highlighting
-  - Option to turn off all comment highlighting 
+  - Option to turn off all comment highlighting
 
 ### Fixed
+
 - Block comment highlighting [issue#1](https://github.com/squeeble-ink/vscode.mint-it/issues/1)
 
 ## [[v0.0.2] - 10/09/2020](https://github.com/squeeble-ink/vscode.mint-it/releases/tag/v0.0.2)

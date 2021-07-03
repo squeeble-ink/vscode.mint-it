@@ -5,13 +5,13 @@
 <h1 align="center">Mint it</h1>
 
 <p align="center">
-  <a href="https://github.com/squeeble-ink/vscode.deco-it/issues">
+  <a href="https://github.com/squeeble-ink/vscode.mint-it/issues">
     <img alt="GitHub issues" src="https://img.shields.io/github/issues/squeeble-ink/vscode.mint-it?color=253550&logo=github&style=flat-square">
   </a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=squeeble.deco-it">
+  <a href="https://marketplace.visualstudio.com/items?itemName=squeeble.mint-it">
     <img src="https://vsmarketplacebadge.apphb.com/version-short/squeeble.mint-it.svg?label=%20&style=flat-square&color=253550">
   </a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=squeeble.deco-it">
+  <a href="https://marketplace.visualstudio.com/items?itemName=squeeble.mint-it">
     <img src="https://vsmarketplacebadge.apphb.com/installs-short/squeeble.mint-it.svg?label=%20&style=flat-square&color=253550">
   </a>
   <br>
@@ -90,4 +90,4 @@ This extension contributes the following settings:
 ![mint-it-js](./assets/mint-it-js-100.png)  
 ![mint-it-css](./assets/mint-it-css-100.png)  
 ![mint-it-cpp](./assets/mint-it-cpp-100.png)  
-![mint-it-css](./assets/mint-it-html-100.png)  
+![mint-it-css](./assets/mint-it-html-100.png)
