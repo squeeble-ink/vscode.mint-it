@@ -7,7 +7,7 @@ int main()
    * NOTE: How this works
    */
 
-  // NOTE: this is says hello!
+  // INFO: this is says hello!
   std::cout << "Hello, world!\n";
 
   /*

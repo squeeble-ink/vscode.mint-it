@@ -1,5 +1,46 @@
 # Change Log
 
+## [[v1.1.0] - 20/08/2021](https://github.com/squeeble-ink/vscode.mint-it/releases/tag/v1.1.0)
+
+### Updated
+- README
+  - Supported languages list
+  - New feature multi tags
+
+### Added
+
+- CHANGELOG
+  - Changes for release v1.1.0
+- Languages
+  - C
+  - C Sharp / C#  
+  - Dockerfile
+  - Go
+  - GraphQL
+  - Java
+  - Jsonc
+  - Kotlin
+  - Less
+  - PHP
+  - Sass
+  - Vue
+  - YAML
+- Features
+  - Multi Tags
+    ```json
+    "mint-it.tags": [
+      {
+        "style": {
+          "color": "#6bf7f7"
+        },
+        "tags": [
+          "NOTE",
+          "INFO"
+        ]
+      },
+    ]
+    ```
+
 ## [[v1.0.1] - 03/07/2021](https://github.com/squeeble-ink/vscode.mint-it/releases/tag/v1.0.1)
 
 ### Fixed

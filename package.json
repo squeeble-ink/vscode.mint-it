@@ -2,7 +2,7 @@
   "name": "mint-it",
   "displayName": "Mint it",
   "description": "vscode comment highlighter : just comment it",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "GPL-3.0",
   "publisher": "Squeeble",
   "engines": {
@@ -10,18 +10,39 @@
   },
   "categories": [
     "Formatters",
+    "Visualization",
+    "Themes",
     "Other"
   ],
   "activationEvents": [
+    "onLanguage:aspnetcorerazor",
+    "onLanguage:c",
+    "onLanguage:cpp",
+    "onLanguage:csharp",
+    "onLanguage:css",
+    "onLanguage:dockerfile",
+    "onLanguage:go",
+    "onLanguage:graphql",
+    "onLanguage:ino",
+    "onLanguage:java",
     "onLanguage:javascript",
     "onLanguage:javascriptreact",
+    "onLanguage:kotlin",
+    "onLanguage:less",
+    "onLanguage:php",
+    "onLanguage:python",
+    "onLanguage:sass",
+    "onLanguage:scss",
     "onLanguage:typescript",
     "onLanguage:typescriptreact",
-    "onLanguage:css",
-    "onLanguage:scss",
-    "onLanguage:cpp",
-    "onLanguage:aspnetcorerazor"
+    "onLanguage:jsonc",
+    "onLanguage:vue",
+    "onLanguage:yaml"
   ],
+  "galleryBanner": {
+    "color": "#0A1128",
+    "theme": "dark"
+},
   "repository": {
     "type": "git",
     "url": "https://github.com/squeeble-ink/vscode.mint-it.git"
@@ -47,7 +68,10 @@
               "style": {
                 "color": "#6bf7f7"
               },
-              "tag": "NOTE"
+              "tags": [
+                "NOTE",
+                "INFO"
+              ]
             },
             {
               "style": {

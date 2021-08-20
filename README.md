@@ -55,7 +55,10 @@ This extension contributes the following settings:
       "style": {
         "color": "#6bf7f7"
       },
-      "tag": "NOTE"
+      "tags": [
+        "NOTE",
+        "INFO"
+      ]
     },
     {
       "style": {
@@ -74,15 +77,28 @@ This extension contributes the following settings:
 
 ### Supported languages
 
-- JavaScript
-- JavaScriptReact
-- TypeScript
-- TypeScriptReact
+- C
+- CPP / INO / C++
+- C Sharp / C#
+- CSHTML / ASP .NET Core Razor
 - CSS
-- SCSS
-- CPP
-- HTML
-- CSHTML
+- Dockerfile
+- Go
+- GraphQL
+- Java
+- JavaScript / JS
+- JavaScriptReact / JSX
+- Jsonc
+- Kotlin
+- Less
+- PHP
+- Python
+- Sass
+- Scss
+- TypeScript / TS
+- TypeScriptReact / TSX
+- Vue
+- YAML
 
 ### Examples
 

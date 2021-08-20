@@ -27,13 +27,27 @@ export class Parser {
     this._commentType = GetConfig().enabled as CommentType
 
     GetConfig().tags.forEach((item) => {
+      let tags = [];
+
+      if (item.tag) {
+        tags.push(item.tag);
+      }
+
+      if (item.tags) {
+        item.tags.forEach(tag => {
+          tags.push(tag);
+        })
+      }
+      
+      const formattedTags = tags.map(tag => tag.replace(/([()[{*+.$^\\|?])/g, '\\$1'))
+
       this._tags.push({
-        endTag: item.tag.replace(/([()[{*+.$^\\|?])/g, '\\$1'),
+        formattedTags,
         ranges: [],
         style: vscode.window.createTextEditorDecorationType(
           item.style,
         ),
-        tag: item.tag,
+        tags,
       })
     })
   }
@@ -96,8 +110,10 @@ export class Parser {
 
   private _GetCharacters(): string[] {
     const characters: string[] = []
-    this._tags.forEach(({ endTag }) => {
-      characters.push(endTag)
+    this._tags.forEach(({ formattedTags }) => {
+      formattedTags.forEach(formattedTag => {
+        characters.push(formattedTag)
+      })
     })
 
     return characters
@@ -111,9 +127,11 @@ export class Parser {
     const range = { range: new vscode.Range(startPos, endPos) }
 
     this._tags.forEach((item) => {
-      if (item.tag.toLowerCase() === match.toLowerCase()) {
-        item.ranges.push(range)
-      }
+      item.tags.forEach((tag) => {
+        if (tag.toLowerCase() === match.toLowerCase()) {
+          item.ranges.push(range)
+        }
+      })
     })
   }
 

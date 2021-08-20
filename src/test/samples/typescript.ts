@@ -4,8 +4,8 @@ class TestTS {
    * NOTE: How this works
    */
   public constructor() {
-    // NOTE: this is a constructor
-    // FixMe: some comments
+    // INFO: this is a constructor
+    // FixMe some comments
   }
 
   /* FixMe a nice cold beer please */

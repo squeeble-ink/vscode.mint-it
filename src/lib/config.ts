@@ -2,7 +2,8 @@ import * as vscode from 'vscode'
 
 export type TagConfig = {
   style: vscode.DecorationRenderOptions
-  tag: string
+  tag?: string
+  tags?: string[]
 }
 
 export type MintItConfig = {
@@ -12,8 +13,8 @@ export type MintItConfig = {
 }
 
 export type TagData = {
-  tag: string
-  endTag: string
+  tags: string[]
+  formattedTags: string[]
   style: vscode.TextEditorDecorationType
   ranges: vscode.DecorationOptions[]
 }
