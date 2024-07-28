@@ -1,11 +1,21 @@
-// Place your settings in this file to overwrite default and user settings.
 {
     "files.exclude": {
-        "out": false // set this to true to hide the "out" folder with the compiled JS files
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/out": true
     },
     "search.exclude": {
-        "out": true // set this to false to include "out" folder in search results
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/out": true
     },
-    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
-    "typescript.tsc.autoDetect": "off"
+    "typescript.tsc.autoDetect": "off",
+    "editor,codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.alwaysShowStatus": true,
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "git.ignoreLimitWarning": true
 }
